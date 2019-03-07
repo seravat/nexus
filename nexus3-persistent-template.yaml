@@ -78,7 +78,7 @@ objects:
             name: ${SERVICE_NAME}-data
         dnsPolicy: ClusterFirst
         restartPolicy: Always
-        securityContext: {}
+        securityContext: {runAsUser: 1000100001}
         terminationGracePeriodSeconds: 30
         volumes:
         - name: ${SERVICE_NAME}-data
