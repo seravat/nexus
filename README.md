@@ -21,14 +21,14 @@ In order to add Sonatype Nexus templates to OpenShift service catalog run the fo
 
 Sonatype Nexus 2:
 ```
-oc create -f https://raw.githubusercontent.com/OpenShiftDemos/nexus/master/nexus2-template.yaml
-oc create -f https://raw.githubusercontent.com/OpenShiftDemos/nexus/master/nexus2-persistent-template.yaml
+oc create -f https://raw.githubusercontent.com/seravat/openshift-nexus/master/nexus2-template.yaml
+oc create -f https://raw.githubusercontent.com/seravat/openshift-nexus/master/nexus2-persistent-template.yaml
 ```
 
 Sonatype Nexus 3:
 ```
-oc create -f https://raw.githubusercontent.com/OpenShiftDemos/nexus/master/nexus3-template.yaml
-oc create -f https://raw.githubusercontent.com/OpenShiftDemos/nexus/master/nexus3-persistent-template.yaml
+oc create -f https://raw.githubusercontent.com/seravat/openshift-nexus/master/nexus3-template.yaml
+oc create -f https://raw.githubusercontent.com/seravat/openshift-nexus/master/nexus3-persistent-template.yaml
 ```
 
 # Deploy Nexus 2
