@@ -58,3 +58,31 @@ In order to specify the Nexus version to be deployed use ```NEXUS_VERSION``` par
 oc new-app nexus2 -p NEXUS_VERSION=2.14.3
 oc new-app nexus3 -p NEXUS_VERSION=3.5.2
 ```
+# Configure Nexus Server with the RedHat repositories
+
+Once all of the components of your application are up, you are ready to configure the Nexus server and add three Maven repositories to the list of proxied repositories.
+
+1. Check the route for Nexus:
+$ oc get route | grep nexus
+
+nexus     nexus-xpaas.cloudapps.test.openshift.opentlc.com             nexus      web
+
+2. In a browser window, navigate to the URL of the Nexus route.
+3. Log in with the username admin and password admin123.
+4. In the navigation panel on the left, click Repositories.
+5. Click the Add icon in the top menu to access the list of options.
+6. Click Proxy Repository and on the New Proxy Repository page, enter the following values, leaving the other fields unchanged:
+    * Repository ID: redhat-ga
+    * Repository Name: Red Hat GA
+    * Remote Storage Location: https://maven.repository.redhat.com/ga/
+7. Click Save.
+8. Add the Red Hat GA repository to the public repository group:
+    1. In the left navigation panel, click Repositories.
+    2. Select Public Repositories.
+    3. In the bottom panel, click the Configuration tab.
+    4. Make sure that the Red Hat GA repository is in the Ordered Group Repositories panel:
+    5. Click Save.
+9. Add the JBoss Public Repository, https://repository.jboss.org/nexus/content/repositories/public/, as a proxy repository and add it to the public repository group, following the same steps you used to set up the Red Hat GA repository:
+10. Add the Red Hat Early Access repository, https://maven.repository.redhat.com/earlyaccess/all/, as a proxy repository and add it to the public repository group, again following the same steps.
+The Git server and Nexus server are set up for your environment. You use these for running the labs that follow.
+
